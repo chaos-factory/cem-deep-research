@@ -57,10 +57,7 @@ Re-read `plan.md` before each dispatch round. Spawn subagents in parallel. Each 
 
 ### Web fetching strategy
 
-**Search:** `firecrawl_search` → `WebSearch`
-**Fetch:** `firecrawl_scrape` → `https://markdown.new/[URL]` via `WebFetch` → `WebFetch` directly
-
-Use first available in each chain.
+Use firecrawl for search and scrape. Search first, evaluate results, then selectively scrape promising URLs. Fall back to `WebSearch`/`WebFetch` if firecrawl is unavailable.
 
 ### Subagent output contract
 
