@@ -46,7 +46,7 @@ Re-read `plan.md` before each dispatch round. Spawn subagents in parallel. Each 
 3. **Boundaries** — what NOT to research (what other subagents cover)
 4. **Budget allocation** — their share of the tier's total searches/fetches
 5. **Output contract** — write two sections: `## Summary` (5–15 bullets of key findings with inline URLs — this is what the lead reads) and `## Full Findings` (detailed notes, quotes, data with inline source URLs)
-6. **Rules** — start broad then narrow; prefer primary sources (academic papers, .gov, official docs) over SEO content; evaluate after each search before the next; use parallel tool calls; **2 hops max** from original search results
+6. **Rules** — start broad then narrow; evaluate after each search before the next; use parallel tool calls; **2 hops max** from original search results
 
 ### Web fetching strategy
 
