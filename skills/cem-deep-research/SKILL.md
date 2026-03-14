@@ -50,11 +50,11 @@ Spawn subagents in parallel via the Agent tool. Each subagent needs a **detailed
 
 ### Web fetching strategy
 
-**Search fallback chain:** `firecrawl_search` → `WebSearch` with `https://markdown.new/[URL]` → `WebSearch` with `WebFetch`
+**Search:** `firecrawl_search` → `WebSearch`
 
-**Fetch fallback chain:** `firecrawl_scrape` → `WebFetch` via `https://markdown.new/[URL]` → `WebFetch` directly
+**Fetch:** `firecrawl_scrape` → `https://markdown.new/[URL]` via `WebFetch` → `WebFetch` directly
 
-Use the first available tool in each chain. Firecrawl tools come from the MCP server — if not connected, fall through to the next option.
+Use the first available tool in each chain.
 
 ### Subagent output contract
 
