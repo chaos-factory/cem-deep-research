@@ -29,7 +29,7 @@ For simple queries (0 subagents), skip to Step 4.
 | Medium | 15–30 | 30–70 | 3–5 |
 | Deep | 30–50 | 70–150 | 5–10 |
 
-These are guidelines, not hard caps. Exceed them when needed to get accurate results.
+These are guidelines, not hard caps.
 
 ## Step 2: Dispatch Subagents
 
