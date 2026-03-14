@@ -1,0 +1,23 @@
+{
+  "skill_name": "cem-deep-research",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "nomad visa in us",
+      "expected_output": "Comprehensive report covering US digital nomad visa options, requirements, alternatives, with cited sources",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "best database for real-time analytics comparing ClickHouse, DuckDB, and Apache Druid",
+      "expected_output": "Detailed technical comparison of the three databases with benchmarks, use cases, pros/cons, and cited sources",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "how is the EU AI Act affecting startups in 2026",
+      "expected_output": "Current policy analysis with real examples of startup impact, compliance requirements, and cited sources",
+      "files": []
+    }
+  ]
+}
