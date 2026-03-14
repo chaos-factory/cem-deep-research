@@ -19,13 +19,13 @@ This system follows an orchestrator-worker pattern: you plan and coordinate, sub
 
 ## Step 0: Assess Complexity and Create Output Directory
 
-Analyze the user's query and classify it:
+Analyze the user's query. Use thinking to determine query complexity, which tools fit the task, how many subagents are needed, and what each subagent's role should be.
 
 | Complexity | Subagents | Tool calls per agent | Example |
 |---|---|---|---|
 | Simple fact-finding | 0 (do it yourself) | 3-10 | "What year was X founded?" |
 | Moderate comparison | 2-4 | 10-15 each | "Compare visa options for digital nomads" |
-| Complex research | 5-10 | 15-20 each | "Comprehensive analysis of AI regulation across G7 countries" |
+| Complex research | 10+ | 15-20 each | "Comprehensive analysis of AI regulation across G7 countries" |
 
 Create a timestamped output directory for this research session:
 
@@ -42,8 +42,9 @@ Think through your approach carefully before acting. Consider:
 - What are the distinct aspects/angles of this query?
 - What would a skilled human researcher investigate first?
 - How should work be divided so subagents don't duplicate effort?
+- Should this query focus on **depth** (investigating one topic in detail) or **breadth** (exploring many topics in parallel)?
 
-**Persist your plan to disk** — write it to `plan.md` in the output directory. This is your memory. If context gets large, you can retrieve it later. The plan should include:
+**Persist your plan to disk** — write it to `plan.md` in the output directory. This is your external memory. Since the context window may exceed 200,000 tokens and get truncated, it is critical to retain the plan externally. The plan should include:
 
 - The research question restated precisely
 - 3-8 research tracks (aspects to investigate in parallel)
@@ -52,12 +53,16 @@ Think through your approach carefully before acting. Consider:
 
 ## Step 2: Dispatch Search Subagents
 
-Spawn subagents in parallel using the Agent tool. Each subagent gets a detailed task description containing:
+Before dispatching, retrieve context: re-read `plan.md` from the output directory to stay oriented (especially important in later rounds of the iterative loop).
 
-1. **Objective** — exactly what to find out (specific, not vague)
+Examine all available tools first. Match tool usage to user intent — prefer specialized tools over generic ones. Use web search tools for broad external exploration.
+
+Spawn subagents in parallel using the Agent tool. Each subagent gets a **detailed** task description containing:
+
+1. **Objective** — exactly what to find out (specific, not vague). Short instructions like "research X" are too vague — subagents will misinterpret the task or duplicate each other's work
 2. **Output file** — where to write results (e.g., `research-output/[slug]/track-01-[name].md`)
-3. **Search strategy** — start broad, then narrow. Use short queries first to see what's available, then refine
-4. **Source guidance** — prefer primary sources (official docs, academic papers, government sites) over SEO content farms. When fetching a page, try `WebFetch` with the URL. If the content is truncated or messy, try fetching `https://markdown.new/[URL]` instead for cleaner output. Fall back to `WebSearch` result snippets if fetching fails entirely
+3. **Search strategy** — start with short, broad queries to map the landscape, then progressively narrow focus. Agents default to overly long specific queries that return few results — counteract this
+4. **Source guidance** — prefer primary sources (official docs, academic papers, government sites) over SEO content farms. Agents tend to choose SEO-optimized content over authoritative but less highly-ranked sources like academic PDFs — explicitly counteract this. When fetching a page, try `WebFetch` with the URL. If the content is truncated or messy, try fetching `https://markdown.new/[URL]` instead for cleaner output. Fall back to `WebSearch` result snippets if fetching fails entirely
 5. **Boundaries** — what NOT to research (to prevent overlap with other subagents)
 6. **Output format** — write findings as structured markdown with source URLs inline
 
@@ -71,10 +76,14 @@ You are a research subagent. Your task:
 **Objective:** [Specific research question for this track]
 
 **Search strategy:**
-- Start with 2-3 broad searches to map the landscape
+- Start with 2-3 short, broad searches to map the landscape
+- Evaluate what you find before drilling deeper — use thinking to assess quality, identify gaps, and refine your next query
 - Then drill into the most promising leads with specific queries
 - Fetch the most authoritative pages for detailed information
 - When fetching a URL, if content is truncated or noisy, try fetching https://markdown.new/[the-url] for cleaner markdown
+- Make parallel tool calls where possible (e.g., 3+ searches simultaneously)
+
+**Source quality:** Prefer primary sources (official docs, .gov sites, academic papers, original reports) over SEO content farms and aggregator sites. If you find yourself reading listicles or content-farm articles, search again for the primary source.
 
 **Sources to prioritize:** [e.g., government sites, academic papers, official documentation]
 **Do NOT research:** [what other subagents are covering]
@@ -97,10 +106,12 @@ Structure your output as:
 - [Source name](URL) — what you found there
 
 IMPORTANT: Include the source URL inline with every claim. Do not make unsourced claims.
-Write your findings directly to the output file using the Write tool. Do not return them in conversation.
+Write your findings directly to the output file using the Write tool. Do not return them in conversation — return only a brief summary of what you found and where you saved it.
 ```
 
-Launch 3-5 subagents in parallel. Each subagent should make parallel tool calls where possible (e.g., searching 3 queries simultaneously).
+Launch 3-5 subagents in parallel (more for complex queries). Each subagent should make parallel tool calls (3+ simultaneously) wherever possible.
+
+**Guardrails:** Do not spawn more than 10 subagents per round. If a subagent's track is too broad, split it into sub-tracks in the next round rather than creating one massive subagent.
 
 ## Step 3: Synthesize and Decide
 
@@ -109,11 +120,11 @@ After subagents complete, read their output files from the output directory. Ass
 - **Coverage** — are all aspects of the query addressed?
 - **Depth** — is there enough detail, or are answers surface-level?
 - **Gaps** — are there contradictions, missing perspectives, or unanswered questions?
-- **Source quality** — are claims backed by authoritative sources?
+- **Source quality** — are claims backed by authoritative sources, or mostly content farms?
 
 If gaps exist, spawn additional targeted subagents to fill them. This is the iterative loop — repeat Steps 2-3 until the research is sufficient. In practice, most queries need 1-2 rounds.
 
-**Context management:** After each round, briefly summarize what you've learned so far and what still needs investigation. If your context is getting large, re-read `plan.md` to stay oriented.
+**Context management:** After each round, summarize completed work and store the summary in the output directory. When context limits approach, re-read `plan.md` and round summaries to stay oriented. Subagent results live on disk, not in your context — read them from files rather than keeping them in memory.
 
 ## Step 4: Write the Report
 
@@ -161,10 +172,11 @@ You are a citation verification agent. Read the research report at [path to repo
 and the source files at [path to output directory].
 
 Your tasks:
-1. Check that every factual claim in the report has an inline citation
-2. Check that every cited URL actually appears in a source file (was actually consulted)
-3. Flag any claims that appear unsourced or where the citation doesn't match the claim
-4. Add a "Citation Quality" section at the end of the report noting any issues found
+1. Cross-reference the report against the source documents to verify that each cited URL actually supports the claim it's attached to
+2. Check that every factual claim in the report has an inline citation
+3. Check that every cited URL actually appears in a source file (was actually consulted)
+4. Flag any claims that appear unsourced or where the citation doesn't match the claim
+5. Add a "Citation Quality" section at the end of the report noting any issues found
 
 Write the verified report back to the same file path.
 Do NOT fabricate sources. If a claim lacks a source, flag it as [citation needed].
