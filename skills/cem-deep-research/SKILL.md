@@ -38,7 +38,8 @@ Re-read `plan.md` before each round. Spawn in parallel. Each subagent prompt mus
 3. Output contract — `## Summary` (5–15 bullets with inline URLs), `## Full Findings` (detailed notes with sources), `## Budget Used` (actual searches/fetches consumed)
 4. **No training data** — every claim must come from web sources; training knowledge is only for guiding searches
 
-Use firecrawl for search and scrape, fall back to `WebSearch`/`WebFetch`. Search first, evaluate results, then selectively scrape promising URLs. Repeat to follow leads.
+For web search and scrape, try in order: (1) firecrawl CLI, (2) firecrawl MCP tools, (3) `WebSearch`/`WebFetch`. 
+Search first, evaluate results, then selectively scrape promising URLs. Repeat to follow leads.
 
 ## Step 3: Synthesize
 
