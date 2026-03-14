@@ -56,7 +56,7 @@ Use firecrawl for search and scrape. Search first, evaluate results, then select
 
 Read subagent summaries from their output files (not from context). Dip into Full Findings only to resolve contradictions.
 
-If significant gaps or contradictions remain and budget permits, spawn targeted follow-up subagents (repeat Steps 2–3). Tally spent budget from subagent `## Budget Used` sections before deciding.
+If gaps or contradictions remain and budget permits, spawn targeted follow-up subagents (repeat Steps 2–3). Tally spent budget from subagent `## Budget Used` sections before deciding.
 
 ## Step 4: Write Report
 
