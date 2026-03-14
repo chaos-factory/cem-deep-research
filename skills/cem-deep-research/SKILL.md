@@ -57,10 +57,17 @@ Re-read `plan.md` before each dispatch round. Spawn subagents in parallel. Each 
 
 ### Web fetching strategy
 
-**Search:** `firecrawl_search` → `WebSearch`
-**Fetch:** `firecrawl_scrape` → `https://markdown.new/[URL]` via `WebFetch` → `WebFetch` directly
+Use firecrawl CLI via Bash (outputs clean markdown, handles JS rendering):
 
-Use first available in each chain.
+```bash
+firecrawl search "query" -o .firecrawl/search-query.json --json
+firecrawl search "query" --scrape -o .firecrawl/search-scraped.json --json  # search + fetch in one step
+firecrawl scrape "https://example.com" -o .firecrawl/example.md
+```
+
+`--scrape` on search fetches full page content for each result — use it to skip separate fetch steps when you need content from all results.
+
+**Fallback** (if firecrawl CLI unavailable): `firecrawl_search`/`firecrawl_scrape` MCP tools → `WebSearch`/`WebFetch`.
 
 ### Subagent output contract
 
