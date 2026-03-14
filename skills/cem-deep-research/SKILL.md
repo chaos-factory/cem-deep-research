@@ -39,7 +39,7 @@ Re-read `plan.md` before each round. Spawn in parallel. Each subagent prompt mus
 2. Budget allocation — their share of the tier total
 3. Output contract — `## Summary` (5–15 bullets with inline URLs), `## Full Findings` (detailed notes with sources), `## Budget Used` (actual searches/fetches consumed)
 
-Use firecrawl for search and scrape. Fall back to `WebSearch`/`WebFetch` if unavailable.
+Use firecrawl for search and scrape, fall back to `WebSearch`/`WebFetch`. Search first, evaluate results, then selectively scrape promising URLs. Repeat to follow leads.
 
 ## Step 3: Synthesize
 
