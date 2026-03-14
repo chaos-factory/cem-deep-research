@@ -50,7 +50,11 @@ Spawn subagents in parallel via the Agent tool. Each subagent needs a **detailed
 
 ### Web fetching strategy
 
-Fetch pages via `https://markdown.new/[URL]` — it handles sites that block direct requests and returns clean markdown. Fall back to `WebFetch` if markdown.new is unavailable.
+**Search:** `firecrawl_search` → `WebSearch`
+
+**Fetch:** `firecrawl_scrape` → `https://markdown.new/[URL]` via `WebFetch` → `WebFetch` directly
+
+Use the first available tool in each chain.
 
 ### Subagent output contract
 
