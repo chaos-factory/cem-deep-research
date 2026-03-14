@@ -38,7 +38,6 @@ Re-read `plan.md` before each round. Spawn in parallel. Each subagent prompt mus
 1. Specific objective, output file path, and boundaries (what other subagents cover)
 2. Budget allocation — their share of the tier total
 3. Output contract — `## Summary` (5–15 bullets with inline URLs), `## Full Findings` (detailed notes with sources), `## Budget Used` (actual searches/fetches consumed)
-4. **2 hops max** from original search results
 
 Use firecrawl for search and scrape. Fall back to `WebSearch`/`WebFetch` if unavailable.
 
