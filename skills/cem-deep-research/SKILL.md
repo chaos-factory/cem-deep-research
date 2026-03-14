@@ -23,6 +23,18 @@ Create output directory: `research-output/[topic-slug]-[YYYYMMDD-HHMM]/`
 
 For simple queries, skip the multi-agent machinery and answer directly.
 
+### Research budget
+
+Set an explicit budget based on complexity. Write it into `plan.md` so subagents respect it.
+
+| Tier | Searches | Page fetches | Subagents |
+|------|----------|-------------|-----------|
+| Light | 5–8 | 10–20 | 0–2 |
+| Medium | 10–18 | 25–50 | 3–5 |
+| Deep | 20–35 | 50–100 | 5–10 |
+
+Most queries are Medium. Use Deep only when explicitly asked for exhaustive research or when the topic has many competing facets. Track usage against budget — if a subagent is burning fetches on low-value pages, cut it short.
+
 ## Step 1: Plan
 
 Decide whether this query needs **depth** (one topic in detail) or **breadth** (many topics in parallel).
@@ -47,6 +59,7 @@ Spawn subagents in parallel via the Agent tool. Each subagent needs a **detailed
 - **SEO content farms:** Agents choose SEO-optimized content over authoritative sources like academic papers, .gov sites, and official docs. Explicitly instruct them to prefer primary sources
 - **No evaluation between searches:** Instruct subagents to think and evaluate after each tool result — assess quality, identify gaps, refine next query — before making the next search
 - **Sequential tool use:** Instruct subagents to make parallel tool calls wherever possible
+- **Citation chasing:** Subagents follow links inside articles (cited sources, comparison pages, reddit threads) and one search can cascade into 6–8 reads. Limit subagents to **2 hops max** from the original search result — if a page cites something interesting, they may fetch that source, but must not follow links from *that* source. Deeper chains rarely add value and burn the fetch budget fast
 
 ### Web fetching strategy
 
@@ -58,7 +71,12 @@ Use the first available tool in each chain.
 
 ### Subagent output contract
 
-Subagents write findings to their output file with **inline source URLs on every claim**. They return only a brief summary to the lead — full results live on disk, not in context.
+Each subagent writes **two sections** to their output file:
+
+1. **`## Summary`** (top) — 5–15 bullet points of key findings with inline URLs. This is what the lead reads.
+2. **`## Full Findings`** — detailed notes, quotes, data tables, with inline source URLs on every claim. This is reference material for the report.
+
+The lead reads only the Summary sections when synthesizing. Dip into Full Findings only to resolve contradictions or extract specific data. This keeps the lead's context lean.
 
 ## Step 3: Synthesize and Decide
 
