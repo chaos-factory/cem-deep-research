@@ -21,13 +21,15 @@ Assess complexity. Write `plan.md` to `research-output/[topic-slug]-[YYYYMMDD-HH
 
 For simple queries (0 subagents), skip to Step 4.
 
-### Budget
+### Budget (soft limits)
 
 | Tier | Searches | Fetches | Subagents |
 |------|----------|---------|-----------|
-| Light | 5–8 | 10–20 | 0–2 |
-| Medium | 10–18 | 25–50 | 3–5 |
-| Deep | 20–35 | 50–100 | 5–10 |
+| Light | 8–15 | 15–30 | 0–2 |
+| Medium | 15–30 | 30–70 | 3–5 |
+| Deep | 30–50 | 70–150 | 5–10 |
+
+These are guidelines, not hard caps.
 
 ## Step 2: Dispatch Subagents
 
