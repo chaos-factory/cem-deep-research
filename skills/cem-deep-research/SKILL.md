@@ -57,9 +57,7 @@ Re-read `plan.md` before each dispatch round. Spawn subagents in parallel. Each 
 
 ### Web fetching strategy
 
-Use firecrawl CLI for search and scrape. Default workflow: search first, evaluate results, then selectively scrape promising URLs.
-
-**Fallback** (if firecrawl CLI unavailable): `firecrawl_search`/`firecrawl_scrape` MCP tools → `WebSearch`/`WebFetch`.
+Use firecrawl for search and scrape. Search first, evaluate results, then selectively scrape promising URLs. Fall back to `WebSearch`/`WebFetch` if firecrawl is unavailable.
 
 ### Subagent output contract
 
