@@ -50,7 +50,7 @@ Spawn subagents in parallel via the Agent tool. Each subagent needs a **detailed
 
 ### Web fetching strategy
 
-Try `WebFetch` with the URL. If content is truncated or noisy, try `https://markdown.new/[URL]` for cleaner markdown. Fall back to `WebSearch` snippets if fetching fails entirely.
+Fetch pages via `https://markdown.new/[URL]` — it handles sites that block direct requests and returns clean markdown. Fall back to `WebFetch` if markdown.new is unavailable, then to `WebSearch` snippets if both fail.
 
 ### Subagent output contract
 
