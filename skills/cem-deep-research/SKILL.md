@@ -45,7 +45,7 @@ Re-read `plan.md` before each dispatch round. Spawn subagents in parallel. Each 
 2. **Output file path** — a file in the output directory
 3. **Boundaries** — what NOT to research (what other subagents cover)
 4. **Budget allocation** — their share of the tier's total searches/fetches
-5. **Output contract** — write two sections: `## Summary` (5–15 bullets of key findings with inline URLs — this is what the lead reads) and `## Full Findings` (detailed notes, quotes, data with inline source URLs)
+5. **Output contract** — write two sections: `## Summary` (5–15 bullets of key findings with inline URLs — this is what the lead reads) and `## Full Findings` (detailed notes, quotes, data with inline source URLs). End the file with `## Budget Used` — report actual searches and fetches consumed
 6. **Rules** — start broad then narrow; evaluate after each search before the next; use parallel tool calls; **2 hops max** from original search results
 
 ### Web fetching strategy
@@ -56,7 +56,7 @@ Use firecrawl for search and scrape. Search first, evaluate results, then select
 
 Read subagent summaries from their output files (not from context). Dip into Full Findings only to resolve contradictions.
 
-If significant gaps or contradictions remain, spawn targeted follow-up subagents (repeat Steps 2–3). **Max 2 follow-up rounds.**
+If gaps or contradictions remain and budget permits, spawn targeted follow-up subagents (repeat Steps 2–3). Tally spent budget from subagent `## Budget Used` sections before deciding.
 
 ## Step 4: Write Report
 
