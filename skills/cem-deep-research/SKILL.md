@@ -29,8 +29,6 @@ For simple queries (0 subagents), skip to Step 4.
 | Medium | 10–18 | 25–50 | 3–5 |
 | Deep | 20–35 | 50–100 | 5–10 |
 
-Default Medium. Deep only when explicitly asked or many competing facets.
-
 ## Step 2: Dispatch Subagents
 
 Re-read `plan.md` before each round. Spawn in parallel. Each subagent prompt must include:
