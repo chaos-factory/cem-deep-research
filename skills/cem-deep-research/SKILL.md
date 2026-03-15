@@ -51,7 +51,7 @@ Search snippets can be weeks stale. Always scrape the actual page to verify clai
 
 ## Step 3: Synthesize
 
-Read subagent summaries from disk. If gaps or contradictions, repeat Steps 2–3 with new objectives to resolve.
+Read each subagent file in full (not just summaries — include Full Findings for nuance and citations). If gaps or contradictions, repeat Steps 2–3 with new objectives to resolve.
 
 ## Step 4: Report
 
