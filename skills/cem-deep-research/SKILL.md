@@ -45,7 +45,9 @@ Re-read `plan.md` before each round. Spawn in parallel. Each subagent prompt mus
 For web search and scrape, try in order: (1) firecrawl CLI, (2) firecrawl MCP tools, (3) `WebSearch`/`WebFetch`.
 This fallback order applies **per request** — a firecrawl failure on one domain (e.g. Reddit) does not mean you should stop using firecrawl for other domains. Always try firecrawl first for each new URL.
 
-**Process**: Search first, evaluate results, selectively scrape promising URLs. Scrape further in depth to follow leads. Perform new searches when needed. Repeat while new data arises.
+**Process**: 
+Search first, evaluate results, selectively scrape promising URLs. Scrape further in depth to follow leads. Perform new searches when needed. Repeat while new data arises.
+If you see related link, scrape it. If use related discussion with new terms, search for it.
 
 Search snippets can be weeks stale. Always scrape the actual page to verify claims — don't rely on snippets alone.
 
