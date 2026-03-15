@@ -46,11 +46,7 @@ Search first, evaluate results, then selectively scrape promising URLs. Repeat t
 
 Search snippets can be weeks stale. Always scrape the actual page to verify claims — don't rely on snippets alone.
 
-**Reddit**: Firecrawl and WebFetch are domain-blocked. Use curl with the JSON API instead:
-```
-curl -s -H 'User-Agent: research-bot/1.0' 'https://www.reddit.com/r/{sub}/top/.json?t=year&limit=25'
-```
-Endpoints: `/top/`, `/new/`, `/search/.json?q=...&restrict_sr=on`, `/comments/{id}/{slug}/.json?depth=5`. Paginate with `?after={cursor}`. Parse JSON with python3.
+**Reddit**: Firecrawl and WebFetch are domain-blocked. Use `curl -s -H 'User-Agent: research-bot/1.0'` with `.json` appended to any Reddit URL. Parse with python3.
 
 ## Step 3: Synthesize
 
