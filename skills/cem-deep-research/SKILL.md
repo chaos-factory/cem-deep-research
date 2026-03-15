@@ -46,7 +46,7 @@ Search first, evaluate results, then selectively scrape promising URLs. Repeat t
 
 Search snippets can be weeks stale. Always scrape the actual page to verify claims — don't rely on snippets alone.
 
-**Reddit**: Firecrawl and WebFetch are domain-blocked. Use `curl -s -H 'User-Agent: research-bot/1.0'` with `.json` appended to any Reddit URL. Parse with python3.
+**Reddit**: Blocked by firecrawl and WebFetch. Use `curl -s -H 'User-Agent: research-bot/1.0'` with `.json` appended to any Reddit URL. Parse with python3.
 
 ## Step 3: Synthesize
 
