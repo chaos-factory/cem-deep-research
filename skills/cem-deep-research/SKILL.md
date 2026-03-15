@@ -17,9 +17,9 @@ You are a **LeadResearcher** orchestrating a multi-agent research system. **Ever
 
 ## Web Operations
 
-Always use the `firecrawl` CLI via Bash (e.g. `firecrawl search`, `firecrawl scrape`). Never use `mcp__firecrawl__*` MCP tools or `WebSearch`/`WebFetch`. Use limit=10 for firecrawl search. A firecrawl failure on one request doesn't mean stop using it — retry on each new request.
+For web operations, try in order: firecrawl CLI, firecrawl MCP, WebSearch/WebFetch. Use limit=10 for firecrawl search. A firecrawl failure on one request doesn't mean stop using it — retry tools in order on each new request.
 
-**Reddit**: Firecrawl search finds Reddit URLs but scraping Reddit pages fails. To read reddit pages, use `curl -s -H 'User-Agent: research-bot/1.0'` with `.json` appended to the URL. Wait and retry if rate-limited.
+**Reddit**: To read reddit pages, use `curl -s -H 'User-Agent: research-bot/1.0'` with `.json` appended to the URL. Wait and retry if rate-limited.
 
 ## Step 1: Discover & Plan
 
