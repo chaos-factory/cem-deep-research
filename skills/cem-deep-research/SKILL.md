@@ -52,7 +52,7 @@ Snippets can be stale — always scrape the actual page to verify claims.
 
 **Completeness**: Before finishing, ask: do your findings represent deep, thorough coverage of your objective? Did you follow all leads? If not, keep going.
 
-**Reddit**: Firecrawl search finds Reddit URLs but scraping Reddit pages fails. Use `curl -s -H 'User-Agent: research-bot/1.0'` with `.json` appended to the URL. Wait and retry if rate-limited.
+**Reddit**: Firecrawl search finds Reddit URLs but scraping Reddit pages fails. To read reddit pages, use `curl -s -H 'User-Agent: research-bot/1.0'` with `.json` appended to the URL. Wait and retry if rate-limited.
 
 ## Step 3: Synthesize
 
