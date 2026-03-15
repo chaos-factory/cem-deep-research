@@ -51,6 +51,8 @@ If you see related link, scrape it. If use related discussion with new terms, se
 
 Search snippets can be weeks stale. Always scrape the actual page to verify claims — don't rely on snippets alone.
 
+**Completeness**: Your budget is allocated to be used — finishing well under budget means you left leads unfollowed. Before writing final output, check: are there unanswered questions from your objective, or leads you saw but didn't follow? If yes, keep going.
+
 **Reddit**: Firecrawl search finds Reddit URLs and snippets, but scraping Reddit pages fails (firecrawl and WebFetch both block direct Reddit reads). To read reddit pages, use `curl -s -H 'User-Agent: research-bot/1.0'` with `.json` appended to any Reddit URL. Wait and retry if rate-limited.
 
 ## Step 3: Synthesize
