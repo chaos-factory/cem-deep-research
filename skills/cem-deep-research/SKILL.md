@@ -51,7 +51,7 @@ If you see related link, scrape it. If use related discussion with new terms, se
 
 Search snippets can be weeks stale. Always scrape the actual page to verify claims — don't rely on snippets alone.
 
-**Stress-test findings**: Don't just gather — verify. For key findings, seek independent signals: user reviews, forum discussions, complaint patterns, recent news. Surface-level descriptions often hide critical problems only visible in real-world feedback.
+**Stress-test findings**: Don't just gather — verify. For all findings, seek independent signals: user reviews, forum discussions, complaint patterns, recent news. Surface-level descriptions often hide critical problems only visible in real-world feedback.
 
 **Completeness**: When you are going to finish, ask: do your findings represent a deep, thorough understanding of your objective? Did you follow all leads? If no, keep going.
 
