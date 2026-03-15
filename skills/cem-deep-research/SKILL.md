@@ -46,7 +46,7 @@ For web search and scrape, try in order: (1) firecrawl CLI, (2) firecrawl MCP to
 This fallback order applies **per request** — a firecrawl failure on one domain (e.g. Reddit) does not mean you should stop using firecrawl for other domains. Always try firecrawl first for each new URL.
 
 **Process**:
-Search first, then scrape and evaluate every promising URL. If a page contains related links, follow all of them, not just 1–2. If a discussion mentions new terms or entities, search for each. Perform new searches when needed. Repeat while new data arises.
+Search first, then scrape and evaluate every promising URL. If a page contains related links, follow each. If a discussion mentions new related terms or entities, search for each. Perform new searches when needed. Repeat while new data arises.
 
 Search snippets can be weeks stale. Always scrape the actual page to verify claims — don't rely on snippets alone.
 
