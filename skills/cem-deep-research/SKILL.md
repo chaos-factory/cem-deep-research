@@ -37,7 +37,7 @@ Re-read `plan.md` before each round. Spawn in parallel. Each subagent prompt mus
 
 1. Specific objective, output file path, and boundaries (what other subagents cover)
 2. Budget allocation — their share of the tier total
-3. Output contract — `## Summary` (5–15 bullets with inline URLs), `## Full Findings` (detailed notes with sources), `## Execution Log` (one row per action: tool used, URL (truncated if long), result, reasoning), `## Budget Used` (actual searches/fetches consumed compared to soft limit)
+3. Output contract — `## Summary` (5–15 bullets with inline URLs), `## Full Findings` (detailed notes with sources), `## Execution Log` (one row per action: action, tool used, URL (can truncate), result, reasoning), `## Budget Used` (actual searches/fetches consumed compared to soft limit)
 4. **No training data** — every claim must come from web sources; training knowledge is only for guiding searches
 
 For web search and scrape, try in order: (1) firecrawl CLI, (2) firecrawl MCP tools, (3) `WebSearch`/`WebFetch`.
