@@ -47,7 +47,7 @@ Search snippets can be weeks stale. Always scrape the actual page to verify clai
 
 ## Step 3: Synthesize
 
-Read subagent summaries from disk. If gaps remain and budget permits (tally `## Budget Used` sections), repeat Steps 2–3.
+Read subagent summaries from disk. If gaps or contradictions, repeat Steps 2–3 with new objectives to resolve.
 
 ## Step 4: Report
 
