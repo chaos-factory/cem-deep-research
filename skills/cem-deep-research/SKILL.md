@@ -42,8 +42,8 @@ Re-read `plan.md` before each round. Spawn in parallel. Each subagent prompt mus
 3. Output contract — `## Summary` (5–15 bullets with inline URLs), `## Full Findings` (detailed notes with sources), `## Execution Log` (one row per action: action, tool used, URL (can truncate), result, reasoning), `## Budget Used` (actual searches/fetches consumed compared to soft limit)
 4. **No training data** — every claim must come from web sources; training knowledge is only for guiding searches
 
-For web search and scrape, try in order: (1) firecrawl CLI, (2) firecrawl MCP tools, (3) `WebSearch`/`WebFetch`. Use limit=10 for firecrawl search.
-This fallback order applies **per request** — a firecrawl failure on one domain (e.g. Reddit) does not mean you should stop using firecrawl for other domains. Always try firecrawl first for each new URL.
+For web search and scrape, try in order: firecrawl CLI, firecrawl MCP, `WebSearch`/`WebFetch`. Use limit=10 for firecrawl search.
+This fallback order applies **per request** — a firecrawl failure on one request does not mean you should stop using firecrawl further. Always apply tools in order for each new URL.
 
 **Process**:
 Search first, then scrape and evaluate every promising URL. If a page contains related links, follow each. If a discussion mentions new related terms or entities, search for each. Perform new searches when needed. Repeat while new data arises.
