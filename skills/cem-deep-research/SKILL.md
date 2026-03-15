@@ -44,7 +44,7 @@ Re-read `plan.md` before each round. Spawn in parallel. Each subagent prompt mus
 For web operations, try in order: firecrawl CLI, firecrawl MCP, `WebSearch`/`WebFetch`. Use limit=10 for firecrawl search. A firecrawl failure on one request doesn't mean stop using it — retry firecrawl first on each new request.
 
 **Process**:
-Search first, then scrape every promising URL. Follow related links. Search for new terms or entities found in discussions. Repeat while new data arises.
+Search first, then scrape every promising URL. Follow all related links. Search for all new terms or entities found in discussions. Repeat while new data arises.
 
 Snippets can be stale — always scrape the actual page to verify claims.
 
