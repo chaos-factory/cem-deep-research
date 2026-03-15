@@ -31,9 +31,9 @@ For web operations, try in order: firecrawl CLI, firecrawl MCP, WebSearch/WebFet
 
 | Tier | Searches | Fetches | Subagents |
 |------|----------|---------|-----------|
-| Light | 32–60 | 60–120 | 0–8 |
-| Medium | 60–120 | 120–280 | 6–20 |
-| Deep | 120–200 | 280–600 | 10–40 |
+| Light | 32–60 | 60–120 | 0–2 |
+| Medium | 60–120 | 120–280 | 3–5 |
+| Deep | 120–200 | 280–600 | 5–10 |
 
 
 ## Step 2: Dispatch Subagents
