@@ -56,7 +56,7 @@ Snippets can be stale — always scrape the actual page to verify claims.
 
 ## Step 3: Synthesize
 
-Read each subagent file in full (including Full Findings for nuance and citations, not just summaries). If gaps or contradictions remain, repeat Steps 2–3 with new objectives.
+Read each subagent file in full. If gaps or contradictions remain, repeat Steps 2–3 with new objectives.
 
 ## Step 4: Report
 
