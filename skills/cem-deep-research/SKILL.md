@@ -27,9 +27,9 @@ For simple queries (0 subagents), skip to Step 4.
 
 | Tier | Searches | Fetches | Subagents |
 |------|----------|---------|-----------|
-| Light | 8–15 | 15–30 | 0–2 |
-| Medium | 15–30 | 30–70 | 3–5 |
-| Deep | 30–50 | 70–150 | 5–10 |
+| Light | 16–30 | 30–60 | 0–4 |
+| Medium | 30–60 | 60–140 | 3–10 |
+| Deep | 60–100 | 140–300 | 5–20 |
 
 These are guidelines, not hard caps.
 
