@@ -23,7 +23,7 @@ For web operations, try in order: firecrawl CLI, firecrawl MCP, WebSearch/WebFet
 
 ## Step 1: Discover & Plan
 
-**Discovery**: Run 3–5 broad searches to map the landscape. Identify subtopics, major sources, community hubs, data availability, and terminology. Think deeply — where is the richest data? What are the natural fault lines for splitting work?
+**Discovery**: Run 3–5 broad searches to map the landscape. These are the only searches you run yourself — all deep research is delegated to subagents. Identify subtopics, major sources, community hubs, data availability, and terminology. Think deeply — where is the richest data? What are the natural fault lines for splitting work?
 
 **Plan**: Write `plan.md` to `research-output/[topic-slug]-[YYYYMMDD-HHMM]/` with: tier, discovery findings, strategy, research tracks, and subagent boundaries. Explain *why* you split tracks the way you did.
 
