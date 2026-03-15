@@ -27,8 +27,6 @@ For web operations, try in order: firecrawl CLI, firecrawl MCP, WebSearch/WebFet
 
 **Plan**: Write `plan.md` to `research-output/[topic-slug]-[YYYYMMDD-HHMM]/` with: tier, discovery findings, strategy, research tracks, and subagent boundaries. Explain *why* you split tracks the way you did.
 
-Skip to Step 4 for simple queries (0 subagents).
-
 ### Budget (soft limits)
 
 | Tier | Searches | Fetches | Subagents |
