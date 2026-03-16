@@ -1,14 +1,10 @@
 ---
 name: cem-deep-research
 description: >
-  Performs deep, multi-agent web research on any topic. Use this skill whenever the user asks to
-  research a topic, investigate a question, find comprehensive information, compare options,
-  or explore a subject in depth. Triggers on phrases like "research", "deep dive", "investigate",
-  "find out about", "what are the options for", "compare", "comprehensive overview", "look into",
-  or any open-ended question that requires searching multiple sources and synthesizing findings.
-  Also triggers when the user wants thorough analysis that goes beyond a quick answer — even if
-  they don't explicitly say "research". If the question would benefit from consulting multiple
-  web sources, use this skill.
+  Performs deep, multi-agent web research on any topic. Use this skill for any request that
+  requires searching multiple web sources and synthesizing findings — whether the user explicitly
+  says "research" or just asks a question that needs thorough, source-backed analysis.
+  Do NOT use for quick factual lookups that a single search can answer.
 ---
 
 # Deep Research
