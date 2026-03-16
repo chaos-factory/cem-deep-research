@@ -21,7 +21,7 @@ For web operations, try in order: firecrawl MCP, WebSearch/WebFetch. Use limit=1
 
 **Discovery**: Run 3–5 broad searches to map the landscape. These are the only searches you run yourself — all deep research is delegated to subagents. Identify subtopics, major sources, community hubs, data availability, and terminology. Think deeply — where is the richest data? What are the natural fault lines for splitting work?
 
-**Plan**: Write `plan.md` to `research-output/[topic-slug]-[YYYYMMDD-HHMM]/` with: tier, discovery findings, strategy, research tracks, and subagent boundaries. Explain *why* you split tracks the way you did.
+**Plan**: Get the current UTC time by running `date -u +%Y%m%d-%H%M`. Write `plan.md` to `research-output/[topic-slug]-[YYYYMMDD-HHMM]/` (using that timestamp) with: tier, discovery findings, strategy, research tracks, and subagent boundaries. Explain *why* you split tracks the way you did.
 
 ### Budget (soft limits)
 
