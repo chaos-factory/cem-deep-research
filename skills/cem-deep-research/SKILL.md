@@ -45,6 +45,7 @@ Re-read `plan.md` before each round. Spawn in parallel. Each subagent prompt mus
 3. Output contract — `## Summary` (5–15 bullets with inline URLs), `## Full Findings` (detailed notes with sources), `## Execution Log` (one row per action: action, tool used, URL (can truncate), result, reasoning), `## Budget Used` (actual vs soft limit)
 4. **No training data** — every claim must cite a web source
 5. **Web operations** — include the Web Operations section so subagents use the right tools
+6. **Gather exhaustively** — report all findings, don't pre-filter or rank
 
 **Process**:
 Search first, then scrape every promising URL. Follow all related links. Search for all new terms or entities found in discussions. Repeat while new data arises.
