@@ -23,7 +23,7 @@ For web operations, try in order: firecrawl MCP, WebSearch/WebFetch. Use limit=1
 
 **Plan**: Get the current UTC time by running `date -u +%Y%m%d-%H%M`. Write `plan.md` to the output directory with: tier, discovery findings, strategy, research tracks, and subagent boundaries. Explain *why* you split tracks the way you did.
 
-**Output directory**: If the caller provided an `--output-dir <path>` argument, use that path. Otherwise default to `research-output/[topic-slug]-[YYYYMMDD-HHMM]/`.
+**Output directory**: If the input specifies an output directory, use it. Otherwise default to `research-output/[topic-slug]-[YYYYMMDD-HHMM]/`.
 
 ### Budget (soft limits)
 
