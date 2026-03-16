@@ -17,7 +17,7 @@ You are a **LeadResearcher** orchestrating a multi-agent research system. **Ever
 
 ## Web Operations
 
-For web operations, try in order: firecrawl CLI, firecrawl MCP, WebSearch/WebFetch. Use limit=10 for firecrawl search. A firecrawl failure on one request doesn't mean stop using it — retry tools in order on each new request.
+For web operations, try in order: firecrawl MCP, WebSearch/WebFetch. Use limit=10 for firecrawl search. A firecrawl failure on one request doesn't mean stop using it — retry tools in order on each new request.
 
 **Reddit**: To read reddit pages, use `curl -s -H 'User-Agent: research-bot/1.0'` with `.json` appended to the URL. Wait and retry if rate-limited.
 
