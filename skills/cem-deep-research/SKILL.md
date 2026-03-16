@@ -46,15 +46,9 @@ Re-read `plan.md` before each round. Spawn in parallel. Each subagent prompt mus
 4. **No training data** — every claim must cite a web source
 5. **Web operations** — include the Web Operations section so subagents use the right tools
 6. **Gather exhaustively** — report all findings, don't pre-filter. If asked for sorted items, rank only after full coverage, never from early results
-
-**Process**:
-Search first, then scrape every promising URL. Follow all related links. Search for all new terms or entities found in discussions. Repeat while new data arises.
-
-Snippets can be stale — always scrape the actual page to verify claims.
-
-**Stress-test findings**: Don't just gather — verify. Seek independent signals: user reviews, forum discussions, complaint patterns, recent news. Surface-level descriptions often hide problems only visible in real-world feedback.
-
-**Completeness**: Before finishing, ask: do your findings represent deep, thorough coverage of your objective? Did you follow all leads? If not, keep going.
+7. **Process** — search first, then scrape every promising URL. Follow all related links. Search for all new terms or entities found in discussions. Repeat while new data arises. Snippets can be stale — always scrape the actual page to verify claims.
+8. **Stress-test findings** — don't just gather — verify. Seek independent signals: user reviews, forum discussions, complaint patterns, recent news. Surface-level descriptions often hide problems only visible in real-world feedback.
+9. **Completeness** — before finishing, ask: do your findings represent deep, thorough coverage of your objective? Did you follow all leads? If not, keep going.
 
 ## Step 3: Synthesize
 
